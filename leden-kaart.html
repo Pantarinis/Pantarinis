@@ -1,0 +1,59 @@
+<link rel="import" href="bower_components/paper-material/paper-material.html">
+
+<dom-module id="leden-kaart">
+  <template>
+    <style>
+    .card {
+      padding: 35px;
+    }
+    #headImage {
+      width: 80px;
+      height: 80px;
+      padding: 15px;
+      padding-left: 0;
+      padding-top: 0;
+    }
+    #name {
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+    </style>
+
+    <paper-material elevation="2">
+      <div class="card">
+        <div class="member-header layout horizontal">
+          <img id="headImage" src="{{image}}">
+          <div class="layout vertical">
+            <h2 id="name">{{naam}}</h2>
+            <div>{{instrument}}</div>
+          </div>
+        </div>
+        <div>{{beschrijving}}</div>
+      </div>
+    </paper-material>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'leden-kaart',
+      properties: {
+        naam: {
+          type: String,
+          value: "Geen naam"
+        },
+        instrument: {
+          type: String,
+          value: "Geen instrument"
+        },
+        image: {
+          type: String,
+          value: "images/avatar-01.svg"
+        },
+        beschrijving: {
+          type: String,
+          value: "Geen beschrijving"
+        }
+      }
+    });
+  </script>
+</dom-module>

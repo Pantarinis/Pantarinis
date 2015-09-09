@@ -1,0 +1,43 @@
+<dom-module id="leden-lijst">
+  <template>
+    <style>
+      leden-kaart {
+        margin: 10px;
+      }
+    </style>
+
+    <template is="dom-repeat" items="{{leden}}">
+      <leden-kaart
+          naam="{{item.naam}}"
+          image="{{item.image}}"
+          instrument="{{item.instrument}}"
+          beschrijving="{{item.beschrijving}}">
+      </leden-kaart>
+    </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'leden-lijst',
+
+      ready: function() {
+        this.leden = [
+          {naam: 'Bram', instrument: 'Hobo', image: 'images/avatar-02.svg',
+            beschrijving: 'Hoi ik ben Bram.'},
+          {naam: 'Antke Leeuwerik', instrument: 'Cello', image: 'images/avatar-01.svg',
+            beschrijving: 'CHello ik ben Antke (pun intended)'},
+          {naam: 'Corijn Rudrum', instrument: 'Saxofoon', image: 'images/corijn.jpg',
+            beschrijving: 'Hoi ik ben Corijn en ik speel saxofoon.'},
+          {naam: 'Renske', instrument: 'Saxofoon', image: 'images/avatar-03.svg',
+            beschrijving: 'Goedemorgen.'},
+          {naam: 'Loes', instrument: 'Blokfluit', image: 'images/avatar-09.svg',
+            beschrijving: 'Hallo is daar iemand'},
+          {naam: 'Eva', instrument: 'Viool', image: 'images/avatar-13.svg',
+            beschrijving: 'Viool spelen is mijn passie.'},
+          {naam: 'Sieuwe', instrument: 'Hoorn', image: 'images/sieuwe.jpg',
+            beschrijving: 'Een hoorn is een muziekinstrument waar een mooi geluid uit komt.'}
+        ];
+      }
+    });
+  </script>
+</dom-module>
