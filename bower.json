@@ -1,0 +1,35 @@
+{
+  "name": "Pantarini's",
+  "main": "app.js",
+  "version": "0.0.0",
+  "authors": [
+    "teinvdlugt@gmail.com"
+  ],
+  "description": "Website van de Pantarini's, het schoolorkest van het Pantarijn in Wageningen.",
+  "keywords": [
+    "Pantarini's",
+    "Pantarijn",
+    "Wageningen",
+    "Polymer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.1.0",
+    "paper-drawer-panel": "PolymerElements/paper-drawer-panel#~1.0.3",
+    "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4",
+    "paper-header-panel": "PolymerElements/paper-header-panel#~1.0.3",
+    "paper-icon-button": "PolymerElements/paper-icon-button#~1.0.3",
+    "paper-menu": "PolymerElements/paper-menu#~1.1.0",
+    "paper-item": "PolymerElements/paper-item#~1.0.2",
+    "iron-pages": "PolymerElements/iron-pages#~1.0.3",
+    "paper-material": "PolymerElements/paper-material#~1.0.1",
+    "more-routing": "Polymore/more-routing#~1.0.0"
+  }
+}

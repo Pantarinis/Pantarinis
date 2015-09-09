@@ -1,0 +1,30 @@
+<dom-module id="foto-lijst">
+  <template>
+    <style>
+      foto-kaart {
+        margin: 10px;
+      }
+    </style>
+
+    <template is="dom-repeat" items="{{fotos}}">
+      <foto-kaart
+          foto="{{item.foto}}"
+          beschrijving="{{item.beschrijving}}"></foto-kaart>
+    </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'foto-lijst',
+
+      ready: function() {
+        this.fotos = [
+          {foto: "images/kring.jpg", beschrijving: "We maken een kringetje van jongens en van meisjes"},
+          {foto: "images/stoel.jpg", beschrijving: "Dat is een stoel"},
+          {foto: "images/trampoline.jpg", beschrijving: "Me zn all' op de trampolien"},
+          {foto: "images/zweefmolen.jpg", beschrijving: "In de zweefmolen in de Efteling"}
+        ];
+      }
+    });
+  </script>
+</dom-module>
