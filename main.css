@@ -24,3 +24,12 @@ paper-menu {
 paper-toolbar {
   --paper-toolbar-background: red;
 }
+
+#title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 28px;
+}
+
+#menu-title {
+  font-family: 'Roboto Slab', sans-serif;
+}
