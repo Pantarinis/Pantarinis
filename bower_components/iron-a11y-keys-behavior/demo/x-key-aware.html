@@ -6,13 +6,11 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<link rel="import" href="../../polymer/polymer.html">
+--><html><head><link rel="import" href="../../polymer/polymer.html">
 <link rel="import" href="../../paper-styles/paper-styles.html">
 <link rel="import" href="../iron-a11y-keys-behavior.html">
 
-<dom-module id="x-key-aware">
+</head><body><dom-module id="x-key-aware">
   <style>
     :host {
       display: block;
@@ -46,46 +44,5 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 </dom-module>
 
-<script>
-  Polymer({
-    is: 'x-key-aware',
-
-    behaviors: [
-      Polymer.IronA11yKeysBehavior
-    ],
-
-    properties: {
-      pressed: {
-        type: String,
-        readOnly: true,
-        value: ''
-      },
-
-      boundKeys: {
-        type: Array,
-        value: function() {
-          return Object.keys(this.keyBindings).join(' ').split(' ');
-        }
-      },
-
-      keyEventTarget: {
-        type: Object,
-        value: function() {
-          return document.body;
-        }
-      }
-    },
-
-    keyBindings: {
-      '* pageup pagedown left right down up shift+a alt+a home end space enter': '_updatePressed'
-    },
-
-    _updatePressed: function(event) {
-      console.log(event.detail);
-
-      this._setPressed(
-        this.pressed + event.detail.combo + ' pressed!\n'
-      );
-    }
-  });
-</script>
+<script src="x-key-aware.html.0.js"></script>
+</body></html>

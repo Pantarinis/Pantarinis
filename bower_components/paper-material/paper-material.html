@@ -6,9 +6,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<link rel="import" href="../polymer/polymer.html">
+--><html><head><link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-styles/shadow.html">
 
 <!--
@@ -27,7 +25,7 @@ Example:
 @demo demo/index.html
 -->
 
-<dom-module id="paper-material">
+</head><body><dom-module id="paper-material">
   <style>
     :host {
       display: block;
@@ -59,40 +57,5 @@ Example:
     <content></content>
   </template>
 </dom-module>
-<script>
-  Polymer({
-    is: 'paper-material',
-
-    properties: {
-
-      /**
-       * The z-depth of this element, from 0-5. Setting to 0 will remove the
-       * shadow, and each increasing number greater than 0 will be "deeper"
-       * than the last.
-       *
-       * @attribute elevation
-       * @type number
-       * @default 1
-       */
-      elevation: {
-        type: Number,
-        reflectToAttribute: true,
-        value: 1
-      },
-
-      /**
-       * Set this to true to animate the shadow when setting a new
-       * `elevation` value.
-       *
-       * @attribute animated
-       * @type boolean
-       * @default false
-       */
-      animated: {
-        type: Boolean,
-        reflectToAttribute: true,
-        value: false
-      }
-    }
-  });
-</script>
+<script src="paper-material.html.0.js"></script>
+</body></html>

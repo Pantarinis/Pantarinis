@@ -1,5 +1,4 @@
-<!doctype html>
-<!--
+<!DOCTYPE html><!--
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -7,10 +6,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<html>
-<head>
+--><html><head>
   <title>paper-button-behavior</title>
 
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
@@ -30,53 +26,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </template>
   </test-fixture>
 
-  <script>
-    suite('basic', function() {
-      var button;
+  <script src="paper-button-behavior.html.0.js"></script>
 
-      setup(function() {
-        button = fixture('basic');
-      });
 
-      test('normal (no states)', function() {
-        assert.equal(button._elevation, 1);
-      });
 
-      test('set disabled property', function() {
-        button.disabled = true;
-        assert.equal(button._elevation, 0);
-      });
-
-      test('pressed and released', function() {
-        MockInteractions.down(button);
-        assert.equal(button._elevation, 4);
-        MockInteractions.up(button);
-        assert.equal(button._elevation, 1);
-      });
-
-      suite('a button with toggles', function() {
-        setup(function() {
-          button.toggles = true;
-        });
-
-        test('activated by tap', function(done) {
-          MockInteractions.downAndUp(button, function() {
-            try {
-              assert.equal(button._elevation, 4);
-              done();
-            } catch (e) {
-              done(e);
-            }
-          });
-        });
-      });
-
-      test('receives focused', function() {
-        MockInteractions.focus(button);
-        assert.equal(button._elevation, 3);
-      });
-    });
-  </script>
-
-</body>
-</html>
+</body></html>

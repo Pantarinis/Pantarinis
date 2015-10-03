@@ -6,13 +6,11 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<link rel="import" href="../../polymer/polymer.html">
+--><html><head><link rel="import" href="../../polymer/polymer.html">
 <link rel="import" href="../../paper-material/paper-material.html">
 <link rel="import" href="../paper-button-behavior.html">
 
-<dom-module id="paper-button">
+</head><body><dom-module id="paper-button">
 
   <style>
 
@@ -50,22 +48,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template>
 
-    <paper-material class="content" elevation="[[_elevation]]" animated>
+    <paper-material class="content" elevation="[[_elevation]]" animated="">
       <content></content>
     </paper-material>
 
   </template>
 
-  <script>
-
-    Polymer({
-      is: 'paper-button',
-
-      behaviors: [
-        Polymer.PaperButtonBehavior
-      ]
-    });
-
-  </script>
+  <script src="paper-button.html.0.js"></script>
 
 </dom-module>
+</body></html>

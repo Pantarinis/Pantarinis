@@ -1,0 +1,12 @@
+{
+  "name": "Pantarini's",
+  "description": "Het schoolorkest van het M.H.V. Pantarijn Wageningen.",
+  "version": "0.1",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "comment:icons": { "16": "calculator-16.png", "128": "calculator-128.png" }
+}

@@ -6,10 +6,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-<!doctype html>
-<html>
-  <head>
+--><!DOCTYPE html><html><head>
 
     <title>paper-item tests</title>
 
@@ -41,26 +38,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </template>
     </test-fixture>
 
-    <script>
+    <script src="paper-item.html.0.js"></script>
 
-      suite('item a11y tests', function() {
-        var item, iconItem;
+  
 
-        setup(function() {
-          item = fixture('item');
-          iconItem = fixture('iconItem');
-        });
-
-        test('item has role="listitem"', function() {
-          assert.equal(item.getAttribute('role'), 'listitem', 'has role="item"');
-        });
-
-        test('icon item has role="listitem"', function() {
-          assert.equal(iconItem.getAttribute('role'), 'listitem', 'has role="item"');
-        });
-      });
-
-    </script>
-
-  </body>
-</html>
+</body></html>
