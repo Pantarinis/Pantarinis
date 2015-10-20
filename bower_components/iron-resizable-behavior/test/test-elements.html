@@ -6,15 +6,79 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><html><head><link rel="import" href="../iron-resizable-behavior.html">
+-->
+<link rel="import" href="../iron-resizable-behavior.html">
 
-<script src="test-elements.html.0.js"></script>
+<script>
 
-<script src="test-elements.html.1.js"></script>
+  Polymer({
 
-<script src="test-elements.html.2.js"></script>
+    is: 'x-resizer-parent',
 
-</head><body><dom-module id="x-resizable-in-shadow">
+    behaviors: [
+      Polymer.IronResizableBehavior
+    ],
+
+    listeners: {
+      'core-resize': 'resizeHandler'
+    },
+
+    resizeHandler: function() {
+    }
+
+  });
+
+</script>
+
+<script>
+
+  Polymer({
+
+    is: 'x-resizer-parent-filtered',
+
+    active: null,
+
+    behaviors: [
+      Polymer.IronResizableBehavior
+    ],
+
+    listeners: {
+      'core-resize': 'resizeHandler'
+    },
+
+    resizeHandler: function() {
+    },
+
+    resizerShouldNotify: function(el) {
+      return (el == this.active);
+    }
+
+  });
+
+</script>
+
+<script>
+
+  Polymer({
+
+    is: 'x-resizable',
+
+    behaviors: [
+      Polymer.IronResizableBehavior
+    ],
+
+    listeners: {
+      'core-resize': 'resizeHandler'
+    },
+
+    resizeHandler: function() {
+    }
+
+  });
+
+</script>
+
+<dom-module id="x-resizable-in-shadow">
 
   <template>
 
@@ -26,9 +90,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </dom-module>
 
-<script src="test-elements.html.3.js"></script>
+<script>
 
-<dom-module id="test-element">
+  Polymer({
+
+    is: 'x-resizable-in-shadow'
+
+  });
+
+</script>
+
+<dom-module id='test-element'>
 
   <template>
 
@@ -60,14 +132,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </dom-module>
 
-<script src="test-elements.html.4.js"></script>
-<script src="test-elements.html.5.js"></script>
+<script>
+
+  Polymer({
+
+    is: 'test-element'
+
+  });
+
+</script>
+<script>
+  Polymer.ObserveIronResizeBehavior = {
+    properties: {
+      ironResizeCount: {
+        type: Number,
+        value: 0
+      }
+    },
+
+    listeners: {
+      'iron-resize': '_incrementIronResizeCount'
+    },
+
+    _incrementIronResizeCount: function() {
+      this.ironResizeCount++;
+    }
+  };
+</script>
 <dom-module id="x-shadow-resizable">
   <template>
     <div></div>
   </template>
 </dom-module>
-<script src="test-elements.html.6.js"></script>
+<script>
+  Polymer({
+    is: 'x-shadow-resizable',
+
+    behaviors: [
+      Polymer.IronResizableBehavior,
+      Polymer.ObserveIronResizeBehavior
+    ]
+  });
+</script>
 
 <dom-module id="x-light-resizable">
   <template>
@@ -75,5 +181,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <x-shadow-resizable id="childResizable2"></x-shadow-resizable>
   </template>
 </dom-module>
-<script src="test-elements.html.7.js"></script>
-</body></html>
+<script>
+  Polymer({
+    is: 'x-light-resizable',
+
+    behaviors: [
+      Polymer.IronResizableBehavior,
+      Polymer.ObserveIronResizeBehavior
+    ]
+  });
+</script>

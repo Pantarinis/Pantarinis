@@ -5,9 +5,11 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><html><head><link rel="import" href="../iron-selector.html">
+-->
 
-</head><body><dom-module id="test-content-element">
+<link rel="import" href="../iron-selector.html">
+
+<dom-module id="test-content-element">
 
   <template>
 
@@ -19,5 +21,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </dom-module>
 
-<script src="content-element.html.0.js"></script>
-</body></html>
+<script>
+
+  Polymer({
+
+    is: 'test-content-element',
+
+    properties: {
+
+      selectable: String,
+
+      selected: {
+        type: String,
+        notify: true
+      }
+
+    }
+
+  });
+
+</script>

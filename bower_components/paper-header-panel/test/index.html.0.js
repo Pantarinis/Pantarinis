@@ -1,7 +1,0 @@
-
-
-      WCT.loadSuites([
-        'basic.html'
-      ]);
-
-    

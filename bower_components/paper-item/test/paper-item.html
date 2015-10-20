@@ -6,7 +6,10 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><!DOCTYPE html><html><head>
+-->
+<!doctype html>
+<html>
+  <head>
 
     <title>paper-item tests</title>
 
@@ -28,18 +31,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <test-fixture id="item">
       <template>
-        <paper-item>item</paper-item>
+        <div role="list">
+          <paper-item>item</paper-item>
+        </div>
       </template>
     </test-fixture>
 
     <test-fixture id="iconItem">
       <template>
-        <paper-icon-item>item</paper-icon-item>
+        <div role="list">
+          <paper-icon-item>item</paper-icon-item>
+        </div>
       </template>
     </test-fixture>
 
-    <script src="paper-item.html.0.js"></script>
+    <script>
 
-  
+      suite('item a11y tests', function() {
+        var item, iconItem;
 
-</body></html>
+        setup(function() {
+          item = fixture('item').querySelector('paper-item');
+          iconItem = fixture('iconItem').querySelector('paper-icon-item');
+        });
+
+        test('item has role="listitem"', function() {
+          assert.equal(item.getAttribute('role'), 'listitem', 'has role="item"');
+        });
+
+        test('icon item has role="listitem"', function() {
+          assert.equal(iconItem.getAttribute('role'), 'listitem', 'has role="item"');
+        });
+
+        a11ySuite('item');
+        a11ySuite('iconItem');
+      });
+
+    </script>
+
+  </body>
+</html>

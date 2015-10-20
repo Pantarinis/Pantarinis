@@ -5,14 +5,45 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><html><head><link rel="import" href="../iron-control-state.html">
+-->
+
+<link rel="import" href="../iron-control-state.html">
 <link rel="import" href="../iron-button-state.html">
 
-<script src="test-elements.html.0.js"></script>
+<script>
 
-<script src="test-elements.html.1.js"></script>
+  Polymer({
 
-</head><body><dom-module id="nested-focusable">
+    is: 'test-control',
+
+    behaviors: [
+      Polymer.IronControlState
+    ]
+
+  });
+
+</script>
+
+<script>
+
+  Polymer({
+
+    is: 'test-button',
+
+    behaviors: [
+      Polymer.IronControlState,
+      Polymer.IronButtonState
+    ],
+
+    _buttonStateChanged: function() {
+
+    }
+
+  });
+
+</script>
+
+<dom-module id="nested-focusable">
 
   <template>
     <input id="input">
@@ -20,5 +51,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </dom-module>
 
-<script src="test-elements.html.2.js"></script>
-</body></html>
+<script>
+
+  Polymer({
+
+    is: 'nested-focusable',
+
+    behaviors: [
+      Polymer.IronControlState
+    ]
+
+  });
+
+</script>

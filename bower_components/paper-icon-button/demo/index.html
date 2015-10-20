@@ -1,4 +1,5 @@
-<!DOCTYPE html><!--
+<!doctype html>
+<!--
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE
@@ -6,7 +7,9 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS
---><html><head>
+-->
+<html>
+  <head>
     <title>paper-icon-button</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
@@ -24,7 +27,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       paper-icon-button {
         margin-left: 30px;
         display: block;
-        width: 24px;
         text-align: center;
       }
 
@@ -66,24 +68,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       paper-icon-button.huge {
         margin-left: 0px;
-        width: 100px;
+        width: 116px;
+        height: 116px;
         --paper-icon-button-ink-color: var(--paper-indigo-500);
-      }
-
-      paper-icon-button.huge::shadow #icon {
-        width: 100px;
-        height: 100px;
-      }
-
-      paper-icon-button.huge #icon {
-        width: 100px;
-        height: 100px;
       }
     </style>
 
   </head>
 
-  <body onclick="clickAction(event);" unresolved="">
+  <body onclick="clickAction(event);" unresolved>
 
     <div class="horizontal-section-container">
       <div>
@@ -102,13 +95,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div>
         <h4>Disabled</h4>
         <div class="horizontal-section">
-          <paper-icon-button icon="menu" alt="menu" disabled=""></paper-icon-button>
-          <paper-icon-button icon="favorite" alt="heart" disabled=""></paper-icon-button>
-          <paper-icon-button icon="arrow-back" alt="arrow-back" disabled=""></paper-icon-button>
-          <paper-icon-button icon="arrow-forward" alt="arrow-forward" disabled=""></paper-icon-button>
-          <paper-icon-button icon="clear" alt="clear" disabled=""></paper-icon-button>
-          <paper-icon-button icon="polymer" alt="polymer" disabled=""></paper-icon-button>
-          <paper-icon-button src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="octocat" disabled=""></paper-icon-button>
+          <paper-icon-button icon="menu" alt="menu" disabled></paper-icon-button>
+          <paper-icon-button icon="favorite" alt="heart" disabled></paper-icon-button>
+          <paper-icon-button icon="arrow-back" alt="arrow-back" disabled></paper-icon-button>
+          <paper-icon-button icon="arrow-forward" alt="arrow-forward" disabled></paper-icon-button>
+          <paper-icon-button icon="clear" alt="clear" disabled></paper-icon-button>
+          <paper-icon-button icon="polymer" alt="polymer" disabled></paper-icon-button>
+          <paper-icon-button src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="octocat" disabled></paper-icon-button>
         </div>
       </div>
 
@@ -133,9 +126,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-icon-button icon="polymer" alt="polymer" class="huge"></paper-icon-button>
         </div>
       </div>
+
+      <div>
+        <h4>Noink</h4>
+        <div class="horizontal-section">
+          <paper-icon-button noink icon="favorite" alt="heart"></paper-icon-button>
+          <br><br><br>
+          <paper-icon-button noink icon="polymer" alt="polymer"></paper-icon-button>
+        </div>
+      </div>
     </div>
 
-    <script src="index.html.0.js"></script>
-  
-
-</body></html>
+    <script>
+      function clickAction(e) {
+        var t = e.target;
+        if (t.localName === 'paper-icon-button') {
+          if (t.hasAttribute('disabled')) {
+            console.error('should not be able to click disabled button', t);
+          } else {
+            console.log('click', t);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

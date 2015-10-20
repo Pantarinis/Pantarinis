@@ -6,7 +6,10 @@
     The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
     Code distributed by Google as part of the polymer project is also
     subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><!DOCTYPE html><html><head>
+-->
+<!DOCTYPE html>
+<html>
+<head>
 
   <title>paper-header-panel tests</title>
 
@@ -53,7 +56,7 @@
 
   <test-fixture id="seamed-shadow">
     <template>
-      <paper-header-panel mode="seamed" shadow="">
+      <paper-header-panel mode="seamed" shadow>
         <div class="paper-header">header</div>
         <div>body</div>
       </paper-header-panel>
@@ -96,8 +99,58 @@
     </template>
   </test-fixture>
 
-  <script src="basic.html.0.js"></script>
+  <script>
 
+    suite('shadow', function() {
+      var standard, seamed, waterfall, waterfallTall, scroll, cover;
 
+      setup(function(done) {
+        standard = fixture('standard');
+        seamed = fixture('seamed');
+        seamedShadow = fixture('seamed-shadow');
+        waterfall = fixture('waterfall');
+        waterfallTall = fixture('waterfall-tall');
+        scroll = fixture('scroll');
+        cover = fixture('cover');
+        // async to let change handlers fire
+        setTimeout(done, 0);
+      });
 
-</body></html>
+      function hasShadow(panel) {
+        return panel.visibleShadow;
+      };
+
+      test('has shadow in standard mode', function() {
+        assert.isTrue(hasShadow(standard), 'shadow has display');
+      });
+
+      test('no shadow in seamed mode', function() {
+        assert.isFalse(hasShadow(seamed), 'shadow is display:none');
+      });
+
+      test('no shadow in waterfall mode', function() {
+        assert.isFalse(hasShadow(waterfall), 'shadow is display:none');
+      });
+
+      test('no shadow in waterfall-tall mode', function() {
+        assert.isFalse(hasShadow(waterfallTall), 'shadow is display:none');
+      });
+
+      test('no shadow in scroll mode', function() {
+        assert.isFalse(hasShadow(scroll), 'shadow is display:none');
+      });
+
+      test('no shadow in cover mode', function() {
+        assert.isFalse(hasShadow(cover), 'shadow is display:none');
+      });
+
+      test('shadow property forces shadow to show', function() {
+        assert.isTrue(hasShadow(seamedShadow), 'shadow has display');
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
