@@ -33,3 +33,8 @@ paper-toolbar {
 #menu-title {
   font-family: 'Roboto Slab', sans-serif;
 }
+
+paper-menu paper-item a {
+  text-decoration: none;
+  color: black;
+}
